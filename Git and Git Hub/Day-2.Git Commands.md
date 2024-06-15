@@ -18,11 +18,11 @@
 - `git branch -d branch-name`: Delete the branch.
 
 **Staging**.  
-The git staging command is used to add files to the staging area, which is a holding area for files that are about to be committed.  
+    The git staging command is used to add files to the staging area, which is a holding area for files that are about to be committed.  
 
 **Command for Staging**.  
-The git stash command is used to temporarily save uncommitted changes in the working directory.
-This can be useful if you need to switch branches or work on another task without losing your changes.
+    The git stash command is used to temporarily save uncommitted changes in the working directory.
+    This can be useful if you need to switch branches or work on another task without losing your changes.
 
 - `git status`: to check the current status.
 - `git restore  --staged` :To restore a modified file to its original state:.
