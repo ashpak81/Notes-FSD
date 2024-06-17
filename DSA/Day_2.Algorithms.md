@@ -31,6 +31,13 @@ Dynamic programming breaks down a complex problem into smaller subproblems and s
 1. **Optimization Problems:** Dynamic programming is used to solve optimization problems such as the knapsack problem and sequence alignment in bioinformatics.  
 2. **Robotics:** Dynamic programming is used to plan robot movements and optimize path planning in robotics.
 
+### Greedy Algorithms: 
+Greedy algorithms make locally optimal choices at each step with the hope of finding a global optimum.  
+
+**Realtime Applications:**  
+1. **Huffman Coding:** Greedy algorithms are used to construct optimal prefix codes for data compression in Huffman coding.  
+2. **Minimum Spanning Trees:** Greedy algorithms are used to find minimum spanning trees in network design and clustering problems.  
+
 ###  Divide and Conquer Algorithms  
 Divide and conquer algorithms break down a problem into smaller subproblems, solve each subproblem independently, and then combine the solutions.
 
