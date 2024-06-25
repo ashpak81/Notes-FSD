@@ -88,3 +88,19 @@ The Java compiler executes the code from top to bottom. Java provides statements
         }
     }
     ```
+
+## Switch Case  
+- The switch statement in Java is a control flow statement that allows you to execute different blocks of code based on the value of a variable. It is similar to the if-else statement, but it can be used to handle multiple cases more easily.
+- The expression in the switch statement is evaluated, and the corresponding case block is executed. If no case matches the value of the expression, the default block is executed.
+   ```java
+   switch (expression) {
+  case value1:
+    // code block
+    break;
+  case value2:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
