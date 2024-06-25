@@ -102,5 +102,5 @@ The Java compiler executes the code from top to bottom. Java provides statements
     break;
   default:
     // code block
-}
+   }
     ```
