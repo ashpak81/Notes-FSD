@@ -19,4 +19,13 @@
 ## Do While Loop
 - The condition statement is evaluated before each iteration of the loop. If the condition is true, the code block is executed. The loop continues to iterate as long as the condition is true.
 Do-while loops are similar to while.
+- Syntax
+  ```
+      do {
+        // code to be executed
+        // update condition inside the loop
+      } while (condition);
+  ```
+  
 
+    
