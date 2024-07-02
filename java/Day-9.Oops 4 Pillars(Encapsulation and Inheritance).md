@@ -344,10 +344,10 @@ public class Main {
 
 ```
 
-## Important Points to Remember:
-Constructor Invocation: The super() call must be the first statement in the subclass constructor.
-Method and Field Access: super can be used to access methods and fields from the immediate superclass only.
-No super in static context: The super keyword cannot be used in a static context because it refers to the current instance of the subclass.
+#### Important Points to Remember (super keyword)
+- **Constructor Invocation**: The super() call must be the first statement in the subclass constructor.
+- **Method and Field Access:** super can be used to access methods and fields from the immediate superclass only.
+- **No super in static context:** The super keyword cannot be used in a static context because it refers to the current instance of the subclass.  
 By using the super keyword, you can ensure that the subclass correctly initializes and interacts with its superclass, maintaining proper inheritance hierarchies and behaviors.
 
 
