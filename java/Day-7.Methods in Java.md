@@ -26,7 +26,7 @@
     return a + b;
   }
 ```
-## Here's a revised some points about methods : - 
+## Here's a revised some points about methods 
 
 - Methods are used to encapsulate a logical block of code.
 
