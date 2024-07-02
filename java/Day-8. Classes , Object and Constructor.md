@@ -76,13 +76,13 @@ myDog.break();
   1. Default Constructor.
   2. Parameterized Constructor.
   3. Copy Constructor.
-### Defailt Constructor : 
+### Defailt Constructor 
   - A constructor that has no parameters is known as default the constructor.
   - A default constructor is invisible. And if we write a constructor with no arguments, the compiler does not create a default constructor.
   - It is taken out. It is being overloaded and called a parameterized constructor. The default constructor changed into the parameterized constructor. But Parameterized constructor can’t change the default constructor.
   - The default constructor can be implicit or explicit. If we don’t define explicitly, we get an implicit default constructor.
   - If we manually write a constructor, the implicit one is overridded.
-### Parameterized Constructor :
+### Parameterized Constructor
   - A constructor that has parameters is known as parameterized constructor.
   - If we want to initialize fields of the class with our own values, then use a parameterized constructor.
   - Example :
@@ -109,6 +109,80 @@ class GFG {
     }
   }
 ```
+
+### Copy Constructor
+- A copy constructor is a constructor that initializes an object using another object of the same class.
+- Implementing a Copy Constructor
+ 1. A copy constructor takes a single argument: an object of the same class.
+ 2. Inside the constructor, you copy the values of the fields from the argument object to the new object.
+- Example
+   - Let's create a class Person with a copy constructor:
+```
+
+class Person {
+    private String name;
+    private int age;
+
+    // Regular constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Copy constructor
+    public Person(Person other) {
+        this.name = other.name;
+        this.age = other.age;
+    }
+
+    // Getters
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // Setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{name='" + name + "', age=" + age + "}";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object using the regular constructor
+        Person original = new Person("John", 30);
+        System.out.println("Original: " + original);
+
+        // Creating a copy of the original object using the copy constructor
+        Person copy = new Person(original);
+        System.out.println("Copy: " + copy);
+
+        // Modifying the copy should not affect the original
+        copy.setName("Jane");
+        copy.setAge(25);
+
+        System.out.println("Modified Copy: " + copy);
+        System.out.println("Original (after modifying copy): " + original);
+    }
+}
+
+
+```
+
+
+
 - Note : - Remember: Does constructor return any value?
 ```
   There are no “return value” statements in the constructor, but the constructor returns the current class instance.
