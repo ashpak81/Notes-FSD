@@ -259,3 +259,102 @@ public class Main {
     }
 }
 ```
+## Super Keyword.
+- the super keyword is used to refer to the superclass (parent class) of the current object.
+- **Whenever you create the instance of subclass, an instance of parent class is created implicitly** which is referred by super reference variable.
+
+### **Usage of Java super Keyword**
+
+#### 1. Call a superclass constructor 
+    - When a subclass needs to call a constructor from its superclass, super() is used.
+    - Example :-
+```
+       class Animal {
+    Animal() {
+        System.out.println("Animal constructor called");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super(); // Calls the constructor of the superclass (Animal)
+        System.out.println("Dog constructor called");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+    }
+}
+```
+#### 2. Accessing a Superclass Method
+  - Access a superclass method that has been overridden in the subclass.
+  - If a method in the subclass overrides a method in the superclass, the super keyword can be used to call the overridden method from the superclass.
+  - Example :- 
+```
+  class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void eat() {
+        System.out.println("Dog is eating");
+    }
+
+    void display() {
+        super.eat(); // Calls the eat method of the superclass (Animal)
+        eat();      // Calls the eat method of the current class (Dog)
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.display();
+    }
+}
+```
+#### 3.Accessing a Superclass Field
+  - Access a superclass field that has been hidden by a field in the subclass
+  - If a field in the subclass hides a field in the superclass, the super keyword can be used to access the hidden field.
+   - Example :-
+```
+class Animal {
+    String color = "white";
+}
+
+class Dog extends Animal {
+    String color = "black";
+
+    void display() {
+        System.out.println("Dog color: " + color);         // Refers to the Dog class field
+        System.out.println("Animal color: " + super.color); // Refers to the Animal class field
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.display();
+    }
+}
+
+```
+
+## Important Points to Remember:
+Constructor Invocation: The super() call must be the first statement in the subclass constructor.
+Method and Field Access: super can be used to access methods and fields from the immediate superclass only.
+No super in static context: The super keyword cannot be used in a static context because it refers to the current instance of the subclass.
+By using the super keyword, you can ensure that the subclass correctly initializes and interacts with its superclass, maintaining proper inheritance hierarchies and behaviors.
+
+
+
+
+
+
+
+
+
