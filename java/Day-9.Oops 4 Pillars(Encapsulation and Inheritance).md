@@ -1,8 +1,8 @@
 # Oops 4 Pillars
-1. Encapsulation :- Security.
-2. Inheritance   :- Code Reusability.
-3. Abstraction   :-  Show Important Data.
-4. Polymorphism  :-  one name many form.
+#### 1. Encapsulation :- Security.
+#### 2. Inheritance   :- Code Reusability.
+#### 3. Abstraction   :-  Show Important Data.
+#### 4. Polymorphism  :-  one name many form.
 ## Encapsulation
 - Eapsulation is a fundamental concept in object-oriented programming that refers to the bundling of data(variable) and methods that operate on that data within a single unit, which is called a class in Java.
 - The main purpose of encapsulation is to protect the data from being accessed or modified by unauthorized code.
