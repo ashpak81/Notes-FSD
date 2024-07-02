@@ -13,9 +13,9 @@ int b = 6; // Variable declaration.
 a + b; // Expression ('+' is called an operator and 'a' is called an operand).
 ```
 
-**Types of Expressions**
+## **Types of Expressions**
 
-1. **Arithmetic Expressions:**
+### 1. **Arithmetic Expressions:**
    - Arithmetic expressions are used to perform mathematical operations such as addition, multiplication, subtraction, etc.
    - Examples:
      ```java
@@ -26,7 +26,7 @@ a + b; // Expression ('+' is called an operator and 'a' is called an operand).
      int remainder = 10 % 3;  // Modulus.
      ```
 
-2. **Relational Expressions:**
+### 2. **Relational Expressions:**
    - Relational expressions are used to compare values and determine the relationship between them.
    - These expressions return a boolean value (true or false).
    - Examples:
@@ -39,7 +39,7 @@ a + b; // Expression ('+' is called an operator and 'a' is called an operand).
      boolean isLessOrEqual = (10 <= 5);  // Less than or equal to
      ```
 
-3. **Logical Expressions:**
+### 3. **Logical Expressions:**
    - Logical expressions are used to perform logical operations such as AND (&&), OR (||), and NOT (!).
    - Examples:
      ```java
@@ -50,7 +50,7 @@ a + b; // Expression ('+' is called an operator and 'a' is called an operand).
      boolean resultNot = !condition1;  // Logical NOT
      ```
 
-4. **Assignment Expressions:**
+### 4. **Assignment Expressions:**
    - Assignment expressions are used to assign a value to a variable.
    - Common assignment operators are =, +=, -=, *=, /=, %=.
    - Examples:
