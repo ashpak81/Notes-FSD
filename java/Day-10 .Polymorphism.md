@@ -5,78 +5,74 @@
    2. Method Overriding (Run-time Polymorphism).  
 - Polymorphism allows us to perform a single action in different ways.In other words, polymorphism allows you to define one interface and have multiple implementations
 
-### 1. Methode Overloading (Compile time Polymorphim).(Static)
+## Methode Overloading (Compile time Polymorphim).(Static)
 - When there are multiple functions with the same name but different parameters then these functions are said to be overloaded.
 - Functions can be overloaded by changes in the number of arguments or/and a change in the type of arguments.
-```
-class Helper {
+- **Definition**: If a class has multiple methods with the same name but different parameters, it is known as method overloading.
+- **Purpose**: Method overloading increases the readability of the program.
 
-    // Method with 2 integer parameters
-    static int Multiply(int a, int b)
-    {
-        // Returns product of integer numbers
-        return a * b;
-    }
+### Ways to Overload Methods in Java
 
-    // Method 2
-    // With same name but with 2 double parameters
-    static double Multiply(double a, double b)
-    {
-        // Returns product of double numbers
-        return a * b;
-    }
-}
+1. **By changing the number of parameters**:
+    ```java
+    class MathOperations {
+        int add(int a, int b) {
+            return a + b;
+        }
 
-// Class 2
-// Main class
-class GFG {
-    // Main driver method
-    public static void main(String[] args)
-    {
-        // Calling method by passing
-        // input as in arguments
-        System.out.println(Helper.Multiply(2, 4));
-        System.out.println(Helper.Multiply(5.5, 6.3));
+        int add(int a, int b, int c) {
+            return a + b + c;
+        }
     }
-}
-```
-### 1. Methode Overriding (Compile time Polymorphim). (Dynamic Method Dispatch)
-- Runtime polymorphism, also known as dynamic method dispatch in Java, is a process where the method call to an overridden method is resolved at runtime rather than at compile time.
-- How it works:
-  1. Inheritance:
-    - You need a base class and a derived class that inherits from the base class.
-  2. Method Overriding:
-    - The derived class must override a method that is already present in the base class. This means having the same method signature (name, parameters, and return type) in both classes, but with different implementations in the derived class.
-  3. Upcasting:  
-    - Create an object of the derived class and store it in a reference variable of the base class type. This is called upcasting.
- ```
+    ```
+
+2. **By changing the parameter type**:
+    ```java
+    class MathOperations {
+        int add(int a, int b) {
+            return a + b;
+        }
+
+        double add(double a, double b) {
+            return a + b;
+        }
+    }
+    ```
+
+### Note
+- In Java, method overloading cannot be achieved by changing the return type of the method alone. The parameters must also be different.
+- 
+## Methode Overriding (Compile time Polymorphim). (Dynamic Method Dispatch)
+
+- **Definition**: If a subclass (child class) has a method with the same name and parameters as a method in its superclass (parent class), it is known as method overriding.
+- **Purpose**: Method overriding is used to provide a specific implementation of a method that is already defined by its superclass. It is primarily used for runtime polymorphism.
+
+### Usage of Java Method Overriding
+- To implement the method defined in a superclass with a specific behavior in the subclass.
+- To achieve runtime polymorphism.
+
+### Rules for Java Method Overriding
+1. The method in the child class must have the same name as in the parent class.
+2. The method must have the same parameter list as in the parent class.
+3. There must be an IS-A relationship (inheritance) between the classes.
+
+### Example of Method Overriding
+```java
 class Animal {
-    public void sound() {
+    void sound() {
         System.out.println("Animal makes a sound");
     }
 }
 
 class Dog extends Animal {
-    @Override
-    public void sound() {
+    void sound() {
         System.out.println("Dog barks");
     }
 }
 
-class Cat extends Animal {
-    @Override
-    public void sound() {
-        System.out.println("Cat meows");
+public class Test {
+    public static void main(String args[]) {
+        Animal a = new Dog();
+        a.sound();  // Output: Dog barks
     }
 }
-
-public class Main {
-    public static void main(String[] args) {
-        Animal myAnimal = new Dog(); // Upcasting
-        myAnimal.sound(); // Output: Dog barks
-
-        myAnimal = new Cat(); // Upcasting
-        myAnimal.sound(); // Output: Cat meows
-    }
-}
-```
