@@ -3,13 +3,18 @@
 
 ## Basics
 
-- A linked list is a linear data structure that stores elements in non-contiguous memory locations.
-- Each element in a linked list is called a node.
-- Each node contains two parts:
+1. A linked list is a linear data structure that stores elements in non-contiguous memory locations.
+2. Each element in a linked list is called a node.
+3. Each node contains two parts:
   - **Data**: The actual value stored in the node.
-  - **Next**: A reference (or pointer) to the next node in the list.
-- The first node in the list is called the **head**.
-- The last node in the list has its next reference pointing to `null`, indicating the end of the list.
+  - **Next**: A reference (or pointer) to the next node in the list.4.
+4. The first node is called the **head**. It is a special node but not a keyword.
+5. The last node is called the **tail** and its address is `null`, indicating the end of the list.
+6. Insertion and deletion in a linked list happen in constant time \(O(1)\), while random access happens in \(O(n)\) time.
+
+
+
+
 
 ## Types of Linked Lists
 
@@ -74,7 +79,6 @@ public class LinkedListExample {
 }
 ```
 
-## Additional Information
 
 ### Custom Linked List Implementation
 
@@ -125,5 +129,3 @@ public class CustomLinkedList {
     }
 }
 ```
-```
-This Markdown file covers the basics, types, Java implementation, common operations, advantages, disadvantages, and includes an example with the built-in `LinkedList` class as well as a custom implementation.
