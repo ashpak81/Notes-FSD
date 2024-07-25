@@ -36,4 +36,4 @@ Welcome to my Full Stack Development (FSD) Notes Repository! This repository is 
 
 ## About Me
 
-I am **Ashpak Patel**, a software developer with a passion for learning and sharing knowledge.
+I am **Ashpak Patel**, a passion for learning and sharing knowledge.
