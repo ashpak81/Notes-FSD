@@ -1,4 +1,4 @@
-# Understanding Stack Data Structure
+# Stack Data Structure
 
 ## What is a Stack?
 
