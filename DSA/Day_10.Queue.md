@@ -1,45 +1,45 @@
 # Queue Data Structure
 
-## What is a Queue?
+### What is a Queue?
 
 A **queue** is a linear data structure that follows the **FIFO (First In First Out)** principle. Elements are added at the end and removed from the front.
 
-## Why Use a Queue?
+### Why Use a Queue?
 
 - **Order Processing**: Manages tasks in the order they are received.
 - **Buffering**: Handles data transfer between processes.
 - **Task Scheduling**: Manages tasks in the order they are scheduled.
 - **Breadth-First Search (BFS)**: Used in graph traversal.
 
-## Advantages
+### Advantages
 
 - **Order Preservation**: Maintains the sequence of elements.
 - **Simple Operations**: Easy to understand and implement.
 - **Predictable Access**: Ensures consistent processing order.
 
-## Disadvantages
+### Disadvantages
 
 - **Limited Access**: Only the front and rear elements are directly accessible.
 - **Fixed Size**: Can have overflow issues if array-based.
 
-## Time Complexity
+### Time Complexity
 
 - **Insertion (Enqueue)**: O(1)
 - **Deletion (Dequeue)**: O(1)
 - **Access (Peek)**: O(1)
 
-## Real-Life Example
+### Real-Life Example
 
 - **Queue at a Ticket Counter**: The first person in line is served first.
 
-## Use Cases
+### Use Cases
 
 - **Order Processing**: Systems that process tasks in the order they arrive.
 - **Print Queue**: Manages print jobs sequentially.
 - **Data Buffering**: Handles streaming data.
 - **Task Scheduling**: In operating systems for managing tasks.
 
-## In-Built Methods
+### In-Built Methods
 
 - **`offer(E e)`**: Adds an item to the end. Returns `true` if successful, `false` if the queue is full. **Time Complexity: O(1)**
 - **`poll()`**: Removes and returns the front item. Returns `null` if the queue is empty. **Time Complexity: O(1)**
@@ -52,9 +52,7 @@ A **queue** is a linear data structure that follows the **FIFO (First In First O
 - **`isEmpty()`**: Checks if the queue is empty. **Time Complexity: O(1)**
 - **`size()`**: Returns the number of items. **Time Complexity: O(1)**
 
-## Example Code
-
-Here’s a simple Java implementation of a queue:
+### Example Code
 
 ```java
 import java.util.Deque;
