@@ -1,46 +1,76 @@
 # Stack Data Structure
 
-## What is a Stack?
+### What is a Stack?
 
-A **stack** is a linear data structure where both insertion and deletion operations are performed from one end, known as the **top**. It adheres to the **LIFO (Last In First Out)** principle, meaning the last item added is the first one to be removed.
+A **stack** is a linear data structure where insertion and deletion are done at one end called the **top**. It follows the **LIFO (Last In First Out)** principle, meaning the most recently added item is the first one to be removed.
 
-## Why Use a Stack?
+### Why Use a Stack?
 
-1. **Undo Operation**: Allows reverting to a previous state in applications.
-2. **Redo Operation**: Enables reapplication of a previously undone action.
-3. **Ticket Booking**: Manages reservations using a Last In, First Out order.
-4. **Syntax Checking**: Validates expressions in programming languages to ensure correct syntax.
-
-## Advantages and Disadvantages
+- **Undo Operation**: Revert to previous states in applications.
+- **Redo Operation**: Reapply actions that were undone.
+- **Ticket Booking**: Manage reservations with a Last In, First Out order.
+- **Syntax Checking**: Validate expressions in programming languages.
 
 ### Advantages
 
-- **Simple Implementation**: Can be easily implemented using arrays or linked lists.
-- **Fast Access**: Operations like push and pop have constant time complexity (O(1)).
-- **Memory Efficiency**: Allocates memory dynamically as needed.
+- **Simple Implementation**: Easy to implement with arrays or linked lists.
+- **Fast Operations**: Push and pop operations are O(1).
+- **Memory Efficiency**: Uses memory dynamically as needed.
 
 ### Disadvantages
 
-- **Limited Access**: Direct access is restricted to the top element only.
-- **Overflow and Underflow**: Issues may arise with fixed-size implementations or improper operation management.
+- **Limited Access**: Only the top element can be accessed directly.
+- **Overflow/Underflow**: Issues with fixed-size stacks or mismanaged operations.
 
-## Time Complexity
+### Time Complexity
 
-- **Insertion (Push)**: O(1) - Adding an item to the top of the stack takes constant time.
-- **Deletion (Pop)**: O(1) - Removing the top item of the stack also takes constant time.
-- **Access (Peek)**: O(1) - Accessing the top item without removing it is performed in constant time.
-- **Accessing Middle Element**: O(n) - Accessing an element not at the top requires traversing the entire stack, which takes linear time.
+- **Push**: O(1) - Adding an item to the top.
+- **Pop**: O(1) - Removing the top item.
+- **Peek**: O(1) - Accessing the top item.
+- **Accessing Middle Element**: O(n) - Requires traversing the stack.
 
-## Real-Life Example
+### Real-Life Example
 
-- **Stack of Plates**: Similar to a stack of plates where plates are added or removed from the top.
+- **Stack of Plates**: Plates are added or removed from the top of the stack.
 
-## Use Cases
+### Use Cases
 
-1. **Backtracking**: Used in algorithms like Depth-First Search (DFS).
-2. **Expression Evaluation**: Converting infix expressions to postfix notation.
+- **Backtracking**: Algorithms like Depth-First Search (DFS).
+- **Expression Evaluation**: Converting infix expressions to postfix notation.
 
-## Program Example
+### In-Built Methods
+
+1. **`push(T item)`**
+
+- **Description**: Adds an item to the top of the stack.
+- **Time Complexity**: O(1)
+
+2. **`pop()`**
+
+- **Description**: Removes and returns the top item. Throws `EmptyStackException` if the stack is empty.
+- **Time Complexity**: O(1)
+
+3. **`peek()`**
+
+- **Description**: Returns the top item without removing it. Throws `EmptyStackException` if the stack is empty.
+- **Time Complexity**: O(1)
+
+4. **`isEmpty()`**
+
+- **Description**: Checks if the stack is empty.
+- **Time Complexity**: O(1)
+
+5. **`size()`**
+
+- **Description**: Returns the number of items in the stack.
+- **Time Complexity**: O(1)
+
+6. **`getMiddleElement()`**
+
+- **Description**: Returns the middle element of the stack (inefficient for large stacks).
+- **Time Complexity**: O(n)
+
+### Example Code
 
 ```java
 import java.util.EmptyStackException;
@@ -64,13 +94,11 @@ public class Stack<T> {
         size = 0;
     }
 
-    // Pushes an item onto the stack
     public void push(T item) {
         top = new Node<>(item, top);
         size++;
     }
 
-    // Removes and returns the item at the top of the stack
     public T pop() {
         if (isEmpty()) {
             throw new EmptyStackException();
@@ -81,7 +109,6 @@ public class Stack<T> {
         return item;
     }
 
-    // Returns the item at the top of the stack without removing it
     public T peek() {
         if (isEmpty()) {
             throw new EmptyStackException();
@@ -89,17 +116,14 @@ public class Stack<T> {
         return top.data;
     }
 
-    // Returns true if the stack is empty
     public boolean isEmpty() {
         return top == null;
     }
 
-    // Returns the number of items in the stack
     public int size() {
         return size;
     }
 
-    // Accesses the middle element (not efficient, included for completeness)
     public T getMiddleElement() {
         if (isEmpty()) {
             throw new EmptyStackException();
@@ -118,23 +142,23 @@ public class Stack<T> {
         stack.push(2);
         stack.push(3);
 
-        System.out.println("Top element: " + stack.peek());  // Output: Top element: 3
-        System.out.println("Stack size: " + stack.size());   // Output: Stack size: 3
+        System.out.println("Top element: " + stack.peek());  // Output: 3
+        System.out.println("Stack size: " + stack.size());   // Output: 3
 
-        System.out.println("Popped element: " + stack.pop());  // Output: Popped element: 3
-        System.out.println("Stack size after pop: " + stack.size());  // Output: Stack size after pop: 2
+        System.out.println("Popped element: " + stack.pop());  // Output: 3
+        System.out.println("Stack size after pop: " + stack.size());  // Output: 2
 
-        System.out.println("Middle element: " + stack.getMiddleElement());  // Output: Middle element: 1
+        System.out.println("Middle element: " + stack.getMiddleElement());  // Output: 1
     }
 }
 ```
 
-### Explanation:
+#### Explanation
 
-- **`Node<T>`**: A private inner class representing each element in the stack.
-- **`push(T item)`**: Adds an item to the top of the stack. **Time Complexity: O(1)**
-- **`pop()`**: Removes and returns the top item of the stack. **Time Complexity: O(1)**
-- **`peek()`**: Returns the top item without removing it. **Time Complexity: O(1)**
-- **`getMiddleElement()`**: Accesses the middle element of the stack. **Time Complexity: O(n)**
-- **`isEmpty()`**: Checks if the stack is empty.
-- **`size()`**: Returns the number of items in the stack.
+- **`Node<T>`**: Represents each element in the stack.
+- **`push(T item)`**: Adds an item to the top. **O(1)**
+- **`pop()`**: Removes and returns the top item. **O(1)**
+- **`peek()`**: Returns the top item. **O(1)**
+- **`getMiddleElement()`**: Returns the middle element. **O(n)**
+- **`isEmpty()`**: Checks if the stack is empty. **O(1)**
+- **`size()`**: Returns the number of items. **O(1)**
