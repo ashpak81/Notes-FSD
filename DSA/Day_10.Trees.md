@@ -38,3 +38,6 @@
 - Parent node: Node p said to be the parent of q if there is a path from p to q
 - Child node: Any node that is not the root – a child of some node
 - Level: Set of all nodes at a given depth; root considered at the level zero
+
+![image](https://github.com/user-attachments/assets/f1a6d298-7264-4df2-ab94-dc584f6afc5e)
+
