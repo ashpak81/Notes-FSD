@@ -1,190 +1,158 @@
-# Classes
--  Classes is a user-defined blueprint from which objects are created.
--  It is a logical entity that contains methods and data.
--  It is a template or blueprint that defines the properties and behavior of objects.
--  For example, Student is a class while a particular student named Ravi is an object.
+
+## Classes
+
+A **class** in Java is a user-defined blueprint from which objects are created. It serves as a template that defines the properties (attributes) and behaviors (methods) that the objects created from the class will have.
+
+- **Definition:** A class is a logical entity that contains methods and data.
+- **Purpose:** It provides a blueprint for creating objects, which are instances of the class.
+
+**Example:**
+```java
+class Car {
+    // Data members (attributes)
+    private int speed;
+
+    // Methods (behaviors)
+    public void drive() {
+        System.out.println("The car is driving.");
+    }
+
+    public void brake() {
+        System.out.println("The car is braking.");
+    }
+
+    // Getter and Setter for speed
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+}
+```
+
 ### Properties of Classes
-- Class is not a real-world entity. It is just a template or blueprint or prototype from which objects are created.
-- Class does not occupy memory.
-- Class is a group of variables of different data types and a group of methods.
-- A Class in Java can contain :
-  1. Data member
-  2. Method
-  3. Constructor
-  4. Nested Class
-  5. Interface
-- To create a class, you use the keyword **class**. For example, the following code creates a class named Car:
-```
-  class Car {
-  // Methods
-  public void drive() {
-    System.out.println("The car is driving.");
-  }
 
-  public void brake() {
-    System.out.println("The car is braking.");
-  }
+- **Template:** A class is a blueprint or template; it does not occupy memory by itself.
+- **Components:** A class can contain:
+  1. Data members (variables)
+  2. Methods
+  3. Constructors
+  4. Nested classes
+  5. Interfaces
 
-  // Variables
-  private int speed;
+## Objects
 
-  public int getSpeed() {
-    return speed;
-  }
+An **object** is an instance of a class. It represents a real-world entity and can use the attributes and methods defined in the class.
 
-  public void setSpeed(int speed) {
-    this.speed = speed;
-  }
-}
+- **Instantiation:** Objects are created at runtime from a class template using the `new` keyword.
+- **Memory Allocation:** Objects are allocated on the heap memory.
+- **Multiple Instances:** A single class can create multiple objects, each with its own unique state.
+
+**Example:**
+```java
+// Create a new Car object
+Car myCar = new Car();
+
+// Set and get the state of the object
+myCar.drive();
+myCar.setSpeed(50);
+int currentSpeed = myCar.getSpeed();
+System.out.println("Current Speed: " + currentSpeed);
 ```
 
-# Object
-- An object in Java is a basic unit of Object-Oriented Programming and represents real-life entities.
-- Objects are the instances of a class that are created to use the attributes and methods of a class.
-- **Note: When we create an object which is a non primitive data type, it’s always allocated on the heap memory**
-- **One classes can have many object and every object have differant memory.**
-- Objects are created at runtime from templates, also known as classes. In Java, an object is created using the keyword new.
-- Example :
-```
-  // Create a new Car object
-Car BMW = new Car();
+## Constructor
 
-// Set the state of the object
-BMW.drive();
-BMW.setSpeed(50);
-BMW.getSpeed();
+A **constructor** is a special method that is called when an instance of a class is created. It initializes the newly created object and sets up initial values for its attributes.
 
-// Call the methods of the object
-myDog.drive();
-myDog.break();
-```
+### Rules for Constructors
 
-# Constructor
-- A constructor is a block of codes similar to the method. It is called when an instance of the class is created.
-- A constructor is a special type of method that is used to initialize attributes of class. 
-- At the time of calling constructor, memory for the object is allocated in the memory.
-  
-- rules while creating constuctor
-  1. Constructor name is same as class name.
-  2. Constructor don't have datatype and return type.
-  3. Constructor is used only for initialization of attributes of the class.
-  4. Constructor is called automatically when the object is created.
-     
-- **Note** whenever constructor parameter name same as class attribute name used **this** keyword.
+1. **Name:** Constructor name must be the same as the class name.
+2. **Return Type:** Constructors do not have a return type, not even `void`.
+3. **Purpose:** Used exclusively for initializing the class’s attributes.
+4. **Automatic Invocation:** Constructors are called automatically when an object is created.
 
-- There are three types of Constructor
-  1. Default Constructor.
-  2. Parameterized Constructor.
-  3. Copy Constructor.
-### Defailt Constructor 
-  - A constructor that has no parameters is known as default the constructor.
-  - A default constructor is invisible. And if we write a constructor with no arguments, the compiler does not create a default constructor.
-  - It is taken out. It is being overloaded and called a parameterized constructor. The default constructor changed into the parameterized constructor. But Parameterized constructor can’t change the default constructor.
-  - The default constructor can be implicit or explicit. If we don’t define explicitly, we get an implicit default constructor.
-  - If we manually write a constructor, the implicit one is overridded.
-### Parameterized Constructor
-  - A constructor that has parameters is known as parameterized constructor.
-  - If we want to initialize fields of the class with our own values, then use a parameterized constructor.
-  - Example :
-```
-    // Java Program for Parameterized Constructor
-import java.io.*;
-class Geek {
-    // data members of the class.
-    String name;
-    int id;
-    Geek(String name, int id)
-    {
-        this.name = name;
-        this.id = id;
-    }
-}
-class GFG {
-    public static void main(String[] args)
-    {
-        // This would invoke the parameterized constructor.
-        Geek geek1 = new Geek("Avinash", 68);
-        System.out.println("GeekName :" + geek1.name
-                           + " and GeekId :" + geek1.id);
-    }
-  }
-```
+**Note:** If a constructor parameter name matches the attribute name, the `this` keyword is used to distinguish between the parameter and the class attribute.
 
-### Copy Constructor
-- A copy constructor is a constructor that initializes an object using another object of the same class.
-- Implementing a Copy Constructor
- 1. A copy constructor takes a single argument: an object of the same class.
- 2. Inside the constructor, you copy the values of the fields from the argument object to the new object.
-- Example
-   - Let's create a class Person with a copy constructor:
-```
+### Types of Constructors
 
-class Person {
-    private String name;
-    private int age;
+1. **Default Constructor**
+   - A constructor with no parameters.
+   - If no constructor is defined, Java provides a default constructor implicitly.
+   - If a parameterized constructor is defined, the implicit default constructor is not provided.
 
-    // Regular constructor
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+   **Example:**
+   ```java
+   class Example {
+       int value;
 
-    // Copy constructor
-    public Person(Person other) {
-        this.name = other.name;
-        this.age = other.age;
-    }
+       // Default constructor
+       public Example() {
+           value = 0;
+       }
+   }
+   ```
 
-    // Getters
-    public String getName() {
-        return name;
-    }
+2. **Parameterized Constructor**
+   - A constructor with parameters to initialize attributes with specific values.
 
-    public int getAge() {
-        return age;
-    }
+   **Example:**
+   ```java
+   class Geek {
+       String name;
+       int id;
 
-    // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
+       // Parameterized constructor
+       Geek(String name, int id) {
+           this.name = name;
+           this.id = id;
+       }
+   }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+   public class Main {
+       public static void main(String[] args) {
+           Geek geek1 = new Geek("Avinash", 68);
+           System.out.println("GeekName: " + geek1.name + " and GeekId: " + geek1.id);
+       }
+   }
+   ```
 
-    @Override
-    public String toString() {
-        return "Person{name='" + name + "', age=" + age + "}";
-    }
-}
+3. **Copy Constructor**
+   - A constructor that initializes a new object using another object of the same class.
 
-public class Main {
-    public static void main(String[] args) {
-        // Creating an object using the regular constructor
-        Person original = new Person("John", 30);
-        System.out.println("Original: " + original);
+   **Example:**
+   ```java
+   class Person {
+       private String name;
+       private int age;
 
-        // Creating a copy of the original object using the copy constructor
-        Person copy = new Person(original);
-        System.out.println("Copy: " + copy);
+       // Regular constructor
+       public Person(String name, int age) {
+           this.name = name;
+           this.age = age;
+       }
 
-        // Modifying the copy should not affect the original
-        copy.setName("Jane");
-        copy.setAge(25);
+       // Copy constructor
+       public Person(Person other) {
+           this.name = other.name;
+           this.age = other.age;
+       }
 
-        System.out.println("Modified Copy: " + copy);
-        System.out.println("Original (after modifying copy): " + original);
-    }
-}
+       @Override
+       public String toString() {
+           return "Person{name='" + name + "', age=" + age + "}";
+       }
+   }
 
+   public class Main {
+       public static void main(String[] args) {
+           Person original = new Person("John", 30);
+           Person copy = new Person(original);
+           System.out.println("Original: " + original);
+           System.out.println("Copy: " + copy);
+       }
+   }
+   ```
 
-```
-
-
-
-- Note : - Remember: Does constructor return any value?
-```
-  There are no “return value” statements in the constructor, but the constructor returns the current class instance.
-  We can write ‘return’ inside a constructor.
-```
+**Note:** Constructors do not return values, but they return the instance of the class being created.
