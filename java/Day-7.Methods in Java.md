@@ -1,4 +1,4 @@
-# Methods
+## Methods
 - A method in Java is a block of code that performs a specific task.
 - Methods are used to define the behavior of objects in a class.
 - A method can take input parameters and return a value, but it is not necessary.
